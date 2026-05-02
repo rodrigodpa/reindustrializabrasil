@@ -1,0 +1,403 @@
+/* ====================
+   ESTILOS GLOBAIS
+   Reindustrialização Brasil - BIOFISQUI
+==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+    color: #1a2a3a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER E NAVEGAÇÃO ===== */
+header {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    text-align: center;
+    padding: 20px 20px 10px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, #1a5276, #2e86ab);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.logo p {
+    color: #5d6d7e;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+nav {
+    background: #1a5276;
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 4px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    border-radius: 8px 8px 0 0;
+}
+
+nav ul li a:hover {
+    background: #2e86ab;
+}
+
+nav ul li a.active {
+    background: #f39c12;
+    color: #1a2a3a;
+}
+
+/* ===== MAIN ===== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    flex: 1;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.intro h2 {
+    font-size: 1.8rem;
+    color: #1a5276;
+    margin-bottom: 8px;
+}
+
+.intro p {
+    color: #5d6d7e;
+}
+
+/* ===== GRIDS ===== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    color: #1a5276;
+    border-left: 5px solid #f39c12;
+    padding-left: 12px;
+}
+
+.card.full-width {
+    grid-column: 1 / -1;
+}
+
+/* ===== SLIDERS ===== */
+.slider-container {
+    margin: 20px 0;
+}
+
+.slider-container label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+    -webkit-appearance: none;
+    background: #dfe6e9;
+    height: 6px;
+    border-radius: 5px;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2e86ab;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.selic-value, .valor-destaque {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #c0392b;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* ===== CAIXAS DE IMPACTO ===== */
+.impacto-box {
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 15px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.perda {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* ===== ALERTAS ===== */
+.alerta {
+    padding: 12px;
+    border-radius: 12px;
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.alerta-vermelho {
+    background: #fdeded;
+    border-left: 5px solid #e74c3c;
+    color: #c0392b;
+}
+
+.alerta-verde {
+    background: #e8f8f5;
+    border-left: 5px solid #27ae60;
+    color: #1e8449;
+}
+
+.alerta-amarelo {
+    background: #fef9e7;
+    border-left: 5px solid #f1c40f;
+    color: #7d6608;
+}
+
+.problema-destaque {
+    color: #e67e22;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* ===== TABELAS ===== */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.tabela-comparacao {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-comparacao th, .tabela-comparacao td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tabela-comparacao th {
+    background: #f0f4f8;
+    color: #1a5276;
+}
+
+.positivo {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.negativo {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* ===== DESTAQUES ===== */
+.destaque {
+    background: #fff3e0;
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 15px;
+    font-size: 0.85rem;
+}
+
+/* ===== GRÁFICOS ===== */
+canvas {
+    max-height: 280px;
+    width: 100% !important;
+}
+
+/* ===== RANKING ===== */
+.ranking-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ranking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.rank {
+    width: 35px;
+    height: 35px;
+    background: #1a5276;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.impacto, .impacto-alto, .impacto-medio {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.impacto { background: #e74c3c; color: white; }
+.impacto-alto { background: #f39c12; color: #1a2a3a; }
+.impacto-medio { background: #27ae60; color: white; }
+
+/* ===== PLANO DE AÇÃO ===== */
+.plano-grid, .licoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.plano-item, .licao {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.plano-item h4, .licao h4 {
+    color: #1a5276;
+    margin-bottom: 10px;
+}
+
+.plano-item ul {
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+/* ===== EQUIPE ===== */
+.equipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    text-align: center;
+}
+
+.membro {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 20px;
+    transition: transform 0.2s;
+}
+
+.membro:hover {
+    transform: scale(1.02);
+}
+
+.avatar {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.membro h4 {
+    color: #1a5276;
+    margin-bottom: 5px;
+}
+
+.membro p {
+    color: #5d6d7e;
+    font-size: 0.85rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #1a2a3a;
+    color: #aab7c4;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.7rem;
+    margin-top: 40px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    nav ul li a {
+        padding: 10px 14px;
+        font-size: 0.8rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+    
+    .card {
+        padding: 16px;
+    }
+    
+    .plano-grid, .licoes-grid {
+        grid-template-columns: 1fr;
+    }
+}
